@@ -7,13 +7,15 @@ enableMenu: false
 
 ---
 
-> Todo lo que diga en este video es mí opinión, que fuí formando en los últimos
-7 años al trabajar desarrollando Software. Son todas subjetivas y quizás mañana cambien y sean contradictorias.
-
+> Todo lo que diga en este video es **mi opinión y punto de vista**, que fui formando en los últimos 7 años al trabajar desarrollando Software.
 
 ---
 
-- ¿Cómo se que mi código sigue haciendo lo que pienso que hace?{class="fragment"}
+## Dudas frecuentes al desarrollar
+
+--
+
+- ¿Cómo sé que mi código sigue haciendo lo que pienso que hace?{class="fragment"}
 - ¿Cuáles son las mejores maneras de estructurar mi código?{class="fragment"}
 - ¿Cómo hago que mi código sea más sencillo para otrxs?{class="fragment"}
 
@@ -27,9 +29,13 @@ Economía de Software{class="fragment"}
 
 --
 
-Artesanía de Software{class="fragment"}
+Artesanía de Software
 
 ---
+
+## Disciplinas Académicas
+
+--
 
 Análisis
 
@@ -39,7 +45,7 @@ Síntesis
 
 --
 
-Análisis   __  Síntesis
+Análisis __ Síntesis
 
 --
 
@@ -51,10 +57,29 @@ Análisis & Síntesis
 
 ---
 
+Software
+
+--
+
+Software -> Sistema
+
+> Ecosistema, sistema digestivo ... {class="fragment"}
+
+---
+
+## Controlar la Complejidad del Sistema
+
+---
+
 ![puente](https://www.theb1m.com/assets/images/Image+38+-+Previosu+Credit+from+CCB+video.jpg)
-![auto](){class="fragment"}
-![lavarropas](){class="fragment"}
-<img src="" class="fragment" alt="hola">
+
+--
+
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
+
+--
+
+![lavarropas](https://1.bp.blogspot.com/-qA3MkYqUTw0/W04dvlyMfVI/AAAAAAAAACw/OgKlsFvDX7A7JjlrWktE69nIgcfgLX2zACLcBGAs/s1600/ServiplusAutorizado.png)
 
 ---
 
@@ -66,7 +91,7 @@ Análisis & Síntesis
 
 --
 
-![auto]()
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
 
 --
 
@@ -78,34 +103,67 @@ Análisis & Síntesis
 
 --
 
-![auto]()
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
 
-Robustez {class="fragment"}
-
-Eficiencia {class="fragment"}
-
-Rendimiento {class="fragment"}
+Robustez 
 
 --
 
-![motor]()
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
+
+Eficiencia 
+
+--
+
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
+
+Rendimiento 
+
+--
+
+![motor](https://i0.wp.com/slidingmotion.com/wp-content/uploads/2021/07/All_car_engine_parts1.jpg?w=1273&ssl=1)
 
 ---
 
 ### Arquitectura de Software
 
-![auto]()
 
 --
 
-![motor]()
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
+
+Coherencia 
+
+--
+
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
+
+Usabilidad 
+
+--
+
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
+
+Accesibilidad 
+
+--
+
+![motor](https://i0.wp.com/slidingmotion.com/wp-content/uploads/2021/07/All_car_engine_parts1.jpg?w=1273&ssl=1)
 
 ---
 
 ### Artesanía de Software
 
-![auto]()
+--
+
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
 
 --
 
-![motor]()
+![motor](https://i0.wp.com/slidingmotion.com/wp-content/uploads/2021/07/All_car_engine_parts1.jpg?w=1273&ssl=1)
+
+---
+
+## Controlar la Complejidad del Sistema
+
+> Diseño{class="fragment"}

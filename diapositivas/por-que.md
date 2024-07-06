@@ -9,26 +9,25 @@ enableMenu: false
 
 El material que me habría gustado tener cuando realicé mi tesis.
 
-- ¿Cómo se que mi código sigue haciendo lo que pienso que hace?{class="fragment"}
+- ¿Cómo sé que mi código sigue haciendo lo que pienso que hace?{class="fragment"}
 - ¿Cuáles son las mejores maneras de estructurar mi código?{class="fragment"}
 - ¿Cómo hago que mi código sea más sencillo para otrxs?{class="fragment"}
 
 --
 
-```mermaid{ style="display:inline-block;" }
-
+```mermaid {style="display:inline-block;"}
 flowchart LR
     Academia --> Industria
 ```
 
 --
 
-```mermaid
+
+```mermaid {.mermaid style="display:inline-block;"}
 flowchart LR
     Academia --> Industria 
     Industria --> Academia
 ```
-
 
 ---
 
@@ -43,11 +42,13 @@ flowchart LR
 ## ¿Por qué en **Castellano/Español**?
 
 - Poco material disponible en Castellano/Español{class="fragment"}
-- Bajar la bara{class="fragment"}
+- Hacer contenidos más accesibles{class="fragment"}
 
 ---
 
 ## ¿Por qué en el lenguaje `Julia`?
+
+![](https://github.com/JuliaLang/julia-logo-graphics/blob/master/images/julia-logo-color.png?raw=true)
 
 --
 
@@ -55,8 +56,8 @@ Quiero profundizar mi conocimiento en el lenguaje
 
 --
 
-- Disañado para desarrollo de Software Científico
-- Sintáxis sencilla{class="fragment"}
+- Diseñado para desarrollo de Software Científico
+- Sintaxis sencilla{class="fragment"}
 - Gran ecosistema de librerías científicas{class="fragment"}
 - Fácil manejo de paquetes{class="fragment"}
 - Buena interoperabilidad con otros lenguajes{class="fragment"}
