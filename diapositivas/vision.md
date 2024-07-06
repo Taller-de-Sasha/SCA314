@@ -93,6 +93,20 @@ Software -> Sistema
 
 ![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
 
+Dinero disponible
+
+--
+
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
+
+Personal
+
+--
+
+![auto](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgURxrV4H7ibAniQlR0-8TKLzlsTtHSFlXs1PRo86VXGjDKXa4B-Ew_LrcTDI5xYikikyQT7hT6l9nF8Qk9baRwdF_pPAJlCQ6qP6wO_zbqrnhLnq0BaitoS_jCpAUZWycFDj5eDiqTdyvE/s600-rw/seat_fura_dos_1.jpeg)
+
+Tiempo
+
 --
 
 ![motor](https://i0.wp.com/slidingmotion.com/wp-content/uploads/2021/07/All_car_engine_parts1.jpg?w=1273&ssl=1)
