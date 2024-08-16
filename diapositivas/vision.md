@@ -21,6 +21,14 @@ enableMenu: false
 
 --
 
+**Automatizar la ejecución del código**
+
+---
+
+## Maneras de contemplar un problema
+
+--
+
 Ingeniería de Software{class="fragment"}
 
 Arquitectura de Software{class="fragment"}
@@ -39,9 +47,13 @@ Artesanía de Software
 
 Análisis
 
+<iframe data-src="https://dle.rae.es/an%C3%A1lisis#resultados" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen class="fragment"> </iframe>
+
 --
 
 Síntesis
+
+<iframe data-src="https://dle.rae.es/s%C3%ADntesis#resultados" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen class="fragment"> </iframe>
 
 --
 
