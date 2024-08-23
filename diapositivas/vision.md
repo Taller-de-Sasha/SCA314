@@ -25,35 +25,21 @@ enableMenu: false
 
 ---
 
-## Maneras de contemplar un problema
-
---
-
-Ingeniería de Software{class="fragment"}
-
-Arquitectura de Software{class="fragment"}
-
-Economía de Software{class="fragment"}
-
---
-
-Artesanía de Software
-
----
-
-## Disciplinas Académicas
+## Digresión sobre las Disciplinas Académicas
 
 --
 
 Análisis
 
-<iframe data-src="https://dle.rae.es/an%C3%A1lisis#resultados" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen class="fragment"> </iframe>
+[![rae_analisis](./imagenes/rae_analisis.png)](https://dle.rae.es/an%C3%A1lisis#resultados){class="fragment"}
+<!-- <iframe data-src="https://dle.rae.es/an%C3%A1lisis#resultados" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen class="fragment"> </iframe> -->
 
 --
 
 Síntesis
 
-<iframe data-src="https://dle.rae.es/s%C3%ADntesis#resultados" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen class="fragment"> </iframe>
+[![rae_sintesis](./imagenes/rae_sintesis.png)](https://dle.rae.es/s%C3%ADntesis#resultados){class="fragment"}
+<!-- <iframe data-src="https://dle.rae.es/s%C3%ADntesis#resultados" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen class="fragment"> </iframe> -->
 
 --
 
@@ -92,6 +78,22 @@ Software -> Sistema
 --
 
 ![lavarropas](https://1.bp.blogspot.com/-qA3MkYqUTw0/W04dvlyMfVI/AAAAAAAAACw/OgKlsFvDX7A7JjlrWktE69nIgcfgLX2zACLcBGAs/s1600/ServiplusAutorizado.png)
+
+---
+
+## Maneras de contemplar un problema
+
+--
+
+Ingeniería de Software{class="fragment"}
+
+Arquitectura de Software{class="fragment"}
+
+Economía de Software{class="fragment"}
+
+--
+
+Artesanía de Software
 
 ---
 
