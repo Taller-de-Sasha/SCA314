@@ -7,7 +7,7 @@ enableMenu: false
 
 --
 
-<a class="fragment" href="https://www.youtube.com/@SCA314"><i class="fa fa-youtube-play"></i>  @SCA3114 </a>
+<a class="fragment" href="https://www.youtube.com/@SCA314"><i class="fa fa-youtube-play"></i>  @SCA314 </a>
 
 <a class="fragment" href="https://www.github.com/Taller-de-Sasha/SCA314"><i class="fa fa-github"></i>  Taller-De-Sasha/SCA314 </a>
 
