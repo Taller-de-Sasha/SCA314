@@ -15,7 +15,7 @@ enableMenu: false
 
 # Pruebas Automatizadas
 
---
+---
 
 ## Parte 1
 
@@ -31,5 +31,23 @@ Entendiendo la Interpolación Numérica {class="fragment"}
 [(-1,1),(0,0),(1,1)]
 ```
 
+---
+
+## Parte 2
+
+Re-estructurando el proyecto {class="fragment"}
+
 --
 
+Separar el código en:
+
+- Código funcional
+- Código de las pruebas 
+
+--
+
+Requerimientos:
+
+- Definir dos métodos de interpolación: **Lineal a tramos** y **Constante a tramos**
+- Leer los puntos de interpolación desde un archivo {class="fragment"}
+- Hacer un gráfico para validar que esté bien la interpolación {class="fragment"}
