@@ -1,4 +1,6 @@
-# using TestItemRunner
+using PruebasA
+using Test
+using TestItemRunner
 
-# @run_package_tests
-include("pruebas.jl")
+@run_package_tests
+# include("pruebas.jl")
