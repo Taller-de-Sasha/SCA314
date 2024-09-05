@@ -8,6 +8,8 @@ segundo(par) = par[2]
 en_x(p) = map(first, p)
 en_y(p) = map(segundo, p)
 
+divivir(p) = (en_x(p),en_y(p))
+
 
 function interpolacion_constante(puntos)
     xs = en_x(puntos)
