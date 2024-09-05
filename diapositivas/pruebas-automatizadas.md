@@ -17,19 +17,36 @@ enableMenu: false
 
 ---
 
-## Parte 1
+## Parte 4
 
-Entendiendo la Interpolación Numérica {class="fragment"}
-
---
-
-> Dado un conjunto de puntos quiero crear una función (matemática) que pase por los mismos.
+Armar Gráficos para validar implementación {class="fragment"}
 
 --
 
-```julia
-[(-1,1),(0,0),(1,1)]
-```
+Información que queremos observar:
+
+- Puntos **de** interpolación
+- $N$ puntos evaluando la interpolación
+
+---
+
+## Parte 3
+
+Configurar el Ambiente de Trabajo {class="fragment"}
+
+--
+
+Antes de completar las tareas de la Parte 2 que quedaron pendientes:
+
+- Implementar la Interpolación Lineal
+- Implementar una utilidad para ver el gráfico de la interpolación
+
+--
+
+Configurar el Ambiente de Trabajo para:
+
+- Correr las pruebas automatizadas
+- Usar el Debugger
 
 ---
 
@@ -54,20 +71,18 @@ Requerimientos:
 
 ---
 
-## Parte 3
+## Parte 1
 
-Configurar el Ambiente de Trabajo {class="fragment"}
-
---
-
-Antes de completar las tareas de la Parte 2 que quedaron pendientes:
-
-- Implementar la Interpolación Lineal
-- Implementar una utilidad para ver el gráfico de la interpolación
+Entendiendo la Interpolación Numérica {class="fragment"}
 
 --
 
-Configurar el Ambiente de Trabajo para:
+> Dado un conjunto de puntos quiero crear una función (matemática) que pase por los mismos.
 
-- Correr las pruebas automatizadas
-- Usar el Debugger
+--
+
+```julia
+[(-1,1),(0,0),(1,1)]
+```
+
+---
