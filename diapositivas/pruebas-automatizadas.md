@@ -51,3 +51,23 @@ Requerimientos:
 - Definir dos métodos de interpolación: **Lineal a tramos** y **Constante a tramos**
 - Leer los puntos de interpolación desde un archivo {class="fragment"}
 - Hacer un gráfico para validar que esté bien la interpolación {class="fragment"}
+
+---
+
+## Parte 3
+
+Configurar el Ambiente de Trabajo {class="fragment"}
+
+--
+
+Antes de completar las tareas de la Parte 2 que quedaron pendientes:
+
+- Implementar la Interpolación Lineal
+- Implementar una utilidad para ver el gráfico de la interpolación
+
+--
+
+Configurar el Ambiente de Trabajo para:
+
+- Correr las pruebas automatizadas
+- Usar el Debugger
