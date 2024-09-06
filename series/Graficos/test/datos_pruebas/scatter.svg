@@ -1,0 +1,22 @@
+<svg height="$height" width="$width" xmlns="http://www.w3.org/2000/svg"> 
+  <defs>
+    <!-- Dot marker definition -->
+    <marker
+      id="dot"
+      viewBox="0 0 10 10"
+      refX="5"
+      refY="5"
+      markerWidth="5"
+      markerHeight="5">
+      <circle cx="5" cy="5" r="5" fill="blue" />
+    </marker>
+  </defs>
+  
+    <polyline
+    points="10,390 200,200 400,0"
+    fill="none"
+    stroke="none"
+    marker-start="url(#dot)"
+    marker-mid="url(#dot)"
+    marker-end="url(#dot)" />
+</svg> 
