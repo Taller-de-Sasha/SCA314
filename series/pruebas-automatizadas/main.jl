@@ -9,3 +9,6 @@ g = PruebasA.interpolacion_constante(puntos)
 y = f(10)
 
 graficar(f, puntos)
+graficar(g, puntos)
+
+println("Completo")
