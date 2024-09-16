@@ -19,6 +19,22 @@ enableMenu: false
 
 ---
 
+## Parte 6
+
+Generalizar las maneras de inicializar las interpolaciones {class="fragment"}
+
+--
+
+- Ordenar un poco las ramas de git
+
+--
+
+- Extender la forma de crear la interpolación 
+    `[(x1,y1) ... (xN,yN)]`, `[x1, ..., xN], [y1, ..., yN]`, `{x1:y1, ... ,xN:yN}`
+- Leer puntos de interpolación desde un archivo
+
+---
+
 ## Parte 5
 
 Implementar nuevas interpolaciones {class="fragment"}
