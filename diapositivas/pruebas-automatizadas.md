@@ -7,6 +7,8 @@ enableMenu: false
 
 --
 
+![logo](imagenes/logo_sca.svg)
+
 <a class="fragment" href="https://www.youtube.com/@SCA314"><i class="fa fa-youtube-play"></i>  @SCA314 </a>
 
 <a class="fragment" href="https://www.github.com/Taller-de-Sasha/SCA314"><i class="fa fa-github"></i>  Taller-De-Sasha/SCA314 </a>
@@ -14,6 +16,25 @@ enableMenu: false
 ---
 
 # Pruebas Automatizadas
+
+---
+
+## Parte 5
+
+Implementar nuevas interpolaciones {class="fragment"}
+
+--
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IdhnP00Y1Ks?si=TyqiIl40JcJxiTlv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[Charlas de VSCode en JuliaCon](https://www.youtube.com/results?search_query=juliacon+vscode)
+
+--
+
+- Implementar Interpolación Lineal
+- Extender la forma de crear la interpolación 
+    `[(x1,y1) ... (xN,yN)]`, `[x1, ..., xN], [y1, ..., yN]`, `{x1:y1, ... ,xN:yN}`
+- Leer puntos de interpolación desde un archivo
 
 ---
 
