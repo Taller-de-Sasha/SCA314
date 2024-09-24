@@ -19,6 +19,23 @@ enableMenu: false
 
 ---
 
+## Parte 7
+
+Generar pruebas de casos particulares {class="fragment"}
+
+--
+
+Hasta ahora solo probamos casos que esperamos que funcionen. 
+Ahora tenemos que probar casos que sabemos deberían ser inválidos y tenemos
+que definir como queremos que los maneje el software.
+
+- interpolación de una colección vacía {class="fragment"}
+- datos con nodos repetidos {class="fragment"}
+- datos con nodos desordenados {class="fragment"}
+- datos con valores inválidos: NaN, Infinito ... {class="fragment"} 
+
+---
+
 ## Parte 6
 
 Generalizar las maneras de inicializar las interpolaciones {class="fragment"}
