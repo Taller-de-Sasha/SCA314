@@ -1,6 +1,7 @@
 using Test
 using TestItems
 using PruebasA
+using OrderedCollections
 
 puntos = [(-1, 1), (0, 0), (1, 1), (2, 0)]
 puntos2 = [(-1, 1), (0, 0), (1, 1), (2, 0), (3, 2)]
@@ -13,14 +14,12 @@ puntos2 = [(-1, 1), (0, 0), (1, 1), (2, 0), (3, 2)]
         end
     end
 
-    generar_pares_aleatorios(n) = [randn(2) for _ in 1:n]
+    generar_pares_aleatorios(n) = sort([randn(2) for _ in 1:n])
     
-    @testset for f in [PruebasA.interpolacion_constante, PruebasA.interpolacion_lineal]
-        @testset for i in 1:10
+    @testset for f in [PruebasA.interpolacion_constante, PruebasA.interpolacion_lineal], i in 1:10
             p = generar_pares_aleatorios(10)
             fn = f(p)
             verificar_interpolacion_coincide_en_puntos_de_interpolacion(p, fn)
-        end
     end
 end
 
@@ -57,7 +56,7 @@ end
     xs = collect(-1:0.2:1)
     ys = [rand() for _ in xs] 
     
-    data = Dict(zip(xs, ys))
+    data = sort(Dict(zip(xs, ys)))
 
     @testset for interp in [PruebasA.interpolacion_constante, PruebasA.interpolacion_lineal]
         f = interp(data)
