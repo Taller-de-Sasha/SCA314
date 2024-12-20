@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - main
+    paths: 
+        - series/pruebas-automatizadas
   pull_request:
+    paths: 
+        - series/pruebas-automatizadas
   workflow_dispatch:
 
 # needed to allow julia-actions/cache to delete old caches that it has created
