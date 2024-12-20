@@ -7,7 +7,7 @@ enableMenu: false
 
 --
 
-![logo](imagenes/logo_sca.svg)
+![logo](https://raw.githubusercontent.com/Taller-de-Sasha/SCA314/refs/heads/main/logo/logo_sca.svg)
 
 <a class="fragment" href="https://www.youtube.com/@SCA314"><i class="fa fa-youtube-play"></i>  @SCA314 </a>
 
@@ -16,6 +16,18 @@ enableMenu: false
 ---
 
 # Pruebas Automatizadas
+
+---
+
+# Parte 8
+
+Agregar flujo de trabajo en Github Actions para ejecutar las pruebas {class="fragment"}
+
+--
+
+Hasta este punto, las pruebas las ejecutamos manualmente,
+
+ahora vamos a agregar un flujo de trabajo que se ejecuta cada vez que se hace un Pull Request. {class="fragment"}
 
 ---
 
