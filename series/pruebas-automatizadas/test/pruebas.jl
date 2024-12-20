@@ -1,7 +1,6 @@
 using Test
 using TestItems
 using PruebasA
-using OrderedCollections
 
 puntos = [(-1, 1), (0, 0), (1, 1), (2, 0)]
 puntos2 = [(-1, 1), (0, 0), (1, 1), (2, 0), (3, 2)]
@@ -53,6 +52,8 @@ end
 
 
 @testitem "Probar Inicializacion de Interpolacion con {x_i=>y_i}" begin
+    using OrderedCollections
+
     xs = collect(-1:0.2:1)
     ys = [rand() for _ in xs] 
     
