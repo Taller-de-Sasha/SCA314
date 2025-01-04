@@ -7,7 +7,7 @@ enableMenu: false
 
 --
 
-![logo](imagenes/logo_sca.svg)
+![logo](https://raw.githubusercontent.com/Taller-de-Sasha/SCA314/refs/heads/main/logo/logo_sca.svg)
 
 <a class="fragment" href="https://www.youtube.com/@SCA314"><i class="fa fa-youtube-play"></i>  @SCA314 </a>
 
@@ -16,6 +16,51 @@ enableMenu: false
 ---
 
 # Pruebas Automatizadas
+
+---
+
+# Parte 8
+
+Agregar flujo de trabajo en Github Actions para ejecutar las pruebas {class="fragment"}
+
+--
+
+Hasta este punto, las pruebas las ejecutamos manualmente,
+
+ahora vamos a agregar un flujo de trabajo que se ejecuta cada vez que se hace un Pull Request. {class="fragment"}
+
+---
+
+## Parte 7
+
+Generar pruebas de casos particulares {class="fragment"}
+
+--
+
+Hasta ahora solo probamos casos que esperamos que funcionen. 
+Ahora tenemos que probar casos que sabemos deberían ser inválidos y tenemos
+que definir como queremos que los maneje el software.
+
+- interpolación de una colección vacía {class="fragment"}
+- datos con nodos repetidos {class="fragment"}
+- datos con nodos desordenados {class="fragment"}
+- datos con valores inválidos: NaN, Infinito ... {class="fragment"} 
+
+---
+
+## Parte 6
+
+Generalizar las maneras de inicializar las interpolaciones {class="fragment"}
+
+--
+
+- Ordenar un poco las ramas de git
+
+--
+
+- Extender la forma de crear la interpolación 
+    `[(x1,y1) ... (xN,yN)]`, `[x1, ..., xN], [y1, ..., yN]`, `{x1:y1, ... ,xN:yN}`
+- Leer puntos de interpolación desde un archivo
 
 ---
 

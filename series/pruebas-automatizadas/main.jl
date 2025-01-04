@@ -3,18 +3,19 @@ using PruebasA
 
 # puntos = [(-1, 1), (0, 0), (1, 1), (2, 0)]
 
-puntos = [(-1, 2), (0,0), (1,3)]
+puntos = [(0,0), (0,1), (1,2)]
+f = PruebasA.interpolacion_constante(puntos)
+g = PruebasA.interpolacion_lineal(puntos)
 
-
-# xs = PruebasA.en_x(puntos)
-# ys = PruebasA.en_y(puntos)
-
-f = PruebasA.interpolacion_lineal(puntos)
-
-y = f(1)
+y = g(1)
 
 graficar(f, puntos)
-# graficar(interpolaciones[2], puntos)
+graficar(g, puntos)
 
 
 println("Completo")
+
+xs = collect(-1:0.2:1)
+ys = [rand() for _ in xs] 
+    
+data = Dict(zip(xs, ys))
