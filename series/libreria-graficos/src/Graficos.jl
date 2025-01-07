@@ -9,7 +9,7 @@ puntos(data) = join(map( p ->como_string(p[1], height-p[2]),data)," ")
 function template(data, color="red") 
    points = puntos(data)
 """
-<svg height="$height" width="$width" xmlns="http://www.w3.org/2000/svg"> 
+<svg height="$height" width="$width" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 1px solid black"> 
   <defs>
     <!-- Dot marker definition -->
     <marker
@@ -33,6 +33,5 @@ function template(data, color="red")
 </svg> 
 """
 end
-
 mostrar(svg) =  display("image/svg+xml", svg)
 end # module Graficos
