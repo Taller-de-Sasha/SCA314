@@ -10,7 +10,7 @@ como_string(x,y) = "$x,$y"
 function escalear_(data, width, height)
   min_x, max_x = extrema(map(x -> x[1], data))
   min_y, max_y = extrema(map(x -> x[2], data))
-   scale = 1.0
+   scale = 0.9
    shift = 10
   x_scale = scale * width / (max_x - min_x)
   y_scale = scale * height / (max_y - min_y)
@@ -40,7 +40,7 @@ function template(data, color="red")
     </marker>
   </defs>
 
-  <rect x="10" y="10" width="$(width)" height="$(height)" fill="none" stroke="black" stroke-width="1" />
+  <rect x="10" y="10" width="$(width-20)" height="$(height-20)" fill="none" stroke="black" stroke-width="1" />
   
     <polyline
     points="$points"
