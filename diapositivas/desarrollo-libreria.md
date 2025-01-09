@@ -17,6 +17,20 @@ enableMenu: false
 
 ---
 
+## Parte 3
+
+Registrar el paquete {class="fragment"}
+
+--
+
+- Vamos a registrar el paquete en para que otros puedan usarlo 
+
+```julia-repl
+pkg> add Graficos
+```
+
+---
+
 Librería para hacer gráficos de funciones interpoladas en [SVG](https://en.wikipedia.org/wiki/SVG)
 
 <svg class="fragment" height="100" width="100" xmlns="http://www.w3.org/2000/svg">
