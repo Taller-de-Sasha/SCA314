@@ -29,8 +29,10 @@ jobs:
           version: '1'
       - uses: julia-actions/cache@v2
       - name: Install dependencies
-        run: julia --project=series/libreria-graficos/docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+        run: julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+        working-directory: series/libreria-graficos
       - name: Build and deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # If authenticating with GitHub Actions token
-        run: julia --project=series/libreria-graficos/docs/ series/libreria-graficos/docs/make.jl
+        run: julia --project=docs/ docs/make.jl
+        working-directory: series/libreria-graficos
