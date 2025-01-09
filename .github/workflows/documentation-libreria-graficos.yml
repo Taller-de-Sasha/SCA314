@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - libreria-graficos
+    paths: 
+        - series/libreria-graficos/**
+
+  pull_request:
+    branches:
+      - libreria-graficos
+    paths: 
+        - series/libreria-graficos/**
   workflow_dispatch:
 
 jobs:
@@ -25,5 +33,4 @@ jobs:
       - name: Build and deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # If authenticating with GitHub Actions token
-          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }} # If authenticating with SSH deploy key
         run: julia --project=series/libreria-graficos/docs/ series/libreria-graficos/docs/make.jl
