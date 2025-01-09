@@ -3,13 +3,13 @@ name: Documentation
 on:
   push:
     branches:
-      - libreria-graficos
+      - serie/libreria-graficos
     paths: 
         - series/libreria-graficos/**
 
   pull_request:
     branches:
-      - libreria-graficos
+      - serie/libreria-graficos
     paths: 
         - series/libreria-graficos/**
   workflow_dispatch:
