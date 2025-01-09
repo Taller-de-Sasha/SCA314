@@ -1,0 +1,40 @@
+name: Run tests
+
+on:
+  push:
+    branches:
+      - main
+    paths: 
+        - series/libreria-graficos/**
+  pull_request:
+    paths: 
+        - series/libreria-graficos/**
+  workflow_dispatch:
+
+# needed to allow julia-actions/cache to delete old caches that it has created
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        julia-version: ['lts']
+        julia-arch: [x64,x86]
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: ${{ matrix.julia-version }}
+          arch: ${{ matrix.julia-arch }}
+      - uses: julia-actions/cache@v2
+      - uses: julia-actions/julia-runtest@v1
+        with:
+            project: "series/libreria-graficos"
+        
+        # with:
+        #   annotate: true
