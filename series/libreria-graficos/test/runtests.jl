@@ -1,4 +1,5 @@
 using Test
 using Graficos
+using TestItemRunner
 
-include("graficos.jl")
+@run_package_tests
