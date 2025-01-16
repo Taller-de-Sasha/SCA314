@@ -3,11 +3,11 @@
 using Graficos
 
 
-data = [(10,10), (20,20), (30,30)]
+data = [(0,0),(0,1)]
 Graficos.template(data) |> Graficos.mostrar
 
 
+data = [(0,0),(1,0)]
+Graficos.template(data) |> Graficos.mostrar
 
-
-
-d2 = escalear(data, 400, 400)
+d2 = escalear(data)

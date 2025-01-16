@@ -2,21 +2,48 @@ module Graficos
 
 export escalear
 
-width = 400
-height = 400
+fig_width = 400
+fig_height = 400
+
+width = fig_width - 20
+height = fig_height - 20
 
 como_string(x,y) = "$x,$y"
 
-
 # Tomar el minimo y maximo de cada eje y escalar los datos al 90% del tamaño del eje
 function escalear_(data, width, height)
+  if  length(data) == 1
+    return [(width/2,height/2)]
+  end
+
   min_x, max_x = extrema(map(x -> x[1], data))
   min_y, max_y = extrema(map(x -> x[2], data))
-   scale = 0.9
-   shift = 10
-  x_scale = scale * width / (max_x - min_x)
-  y_scale = scale * height / (max_y - min_y)
-  return [(x_scale * (x - min_x )+shift, y_scale * (y - min_y)+shift) for (x, y) in data]
+  
+  scale = 1.0
+  shift = 0.0
+  
+  x_scale = scale * calcular_escala(min_x, max_x, width)
+  y_scale = scale * calcular_escala(min_y, max_y, height)
+  
+  x_shift = calcular_offset(min_x, max_x, width)
+  y_shift = calcular_offset(min_y, max_y, height)
+
+  return [(x_scale * (x - x_shift)+shift, y_scale * (y - y_shift)+shift) for (x, y) in data]
+end
+
+function calcular_offset(min, max, rango) 
+  if min == max
+    return rango/2
+  end
+  0.0
+end
+
+function calcular_escala(min_x, max_x, length)
+  if  min_x == max_x
+    return 1.0
+  end
+
+  length / (max_x - min_x)
 end
 
 """
@@ -32,7 +59,8 @@ Args:
 Returns:
     Tuple{Number, Number}[]: Los pares de coordenadas `(x, y)` escalados.
 """
-function escalear(data)    escalear_(data, width-20, height-20)
+function escalear(data)  
+  escalear_(data, width, height)
 end
 
 puntos(data) = join(map( p ->como_string(p[1], height-p[2]), escalear(data))," ")
