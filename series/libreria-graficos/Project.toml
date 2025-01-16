@@ -1,4 +1,7 @@
 name = "Graficos"
 uuid = "908a5197-780b-4ffb-a736-f299f747b567"
-authors = ["augus "]
+authors = ["augusto kielbowicz"]
 version = "0.1.0"
+
+[compat]
+julia = "1.6"

@@ -19,6 +19,20 @@ enableMenu: false
 
 ---
 
+## Parte 3
+
+Registrar el paquete {class="fragment"}
+
+--
+
+- Vamos a registrar el paquete en para que otros puedan usarlo 
+
+```julia-repl
+pkg> add Graficos
+```
+
+---
+
 ## Parte 2
 
 Configuración de CI/CD {class="fragment"}
