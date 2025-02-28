@@ -2,40 +2,21 @@ module Graficos
 
 export escalear
 
-width = 400
-height = 400
+include("escaleo.jl")
+
+fig_width = 420
+fig_height = 420
+
+width = fig_width - 20
+height = fig_height - 20
+
+xoff = 20
+yoff = 20
 
 como_string(x,y) = "$x,$y"
 
 
-# Tomar el minimo y maximo de cada eje y escalar los datos al 90% del tamaño del eje
-function escalear_(data, width, height)
-  min_x, max_x = extrema(map(x -> x[1], data))
-  min_y, max_y = extrema(map(x -> x[2], data))
-   scale = 0.9
-   shift = 10
-  x_scale = scale * width / (max_x - min_x)
-  y_scale = scale * height / (max_y - min_y)
-  return [(x_scale * (x - min_x )+shift, y_scale * (y - min_y)+shift) for (x, y) in data]
-end
-
-"""
-Escala los datos de entrada para que se ajusten a un ancho y alto específicos, manteniendo la proporción de aspecto.
-
-La función `escalear` toma una lista de pares de coordenadas `(x, y)` y los escala para que se ajusten dentro de un área rectangular del `ancho` y `alto` especificados, con un margen de 10 píxeles en cada lado. El escalado se realiza encontrando los valores mínimos y máximos de las coordenadas `x` e `y`, y luego escalando los datos al 90% del ancho y alto disponibles.
-
-Args:
-    data (Tuple{Number, Number}[]): Una lista de pares de coordenadas `(x, y)` para ser escalados.
-    width (Number): El ancho deseado de los datos escalados.
-    height (Number): El alto deseado de los datos escalados.
-
-Returns:
-    Tuple{Number, Number}[]: Los pares de coordenadas `(x, y)` escalados.
-"""
-function escalear(data)    escalear_(data, width-20, height-20)
-end
-
-puntos(data) = join(map( p ->como_string(p[1], height-p[2]), escalear(data))," ")
+puntos(data) = join(map( p ->como_string(p[1]+xoff, height-p[2]+yoff), escalear(data, width, height))," ")
 
 
 """
@@ -67,7 +48,8 @@ function template(data, color="red")
     </marker>
   </defs>
 
-  <rect x="10" y="10" width="$(width-20)" height="$(height-20)" fill="none" stroke="black" stroke-width="1" />
+  <rect x="0" y="0" width="$(fig_width)" height="$(fig_height)" fill="none" stroke="blue" stroke-width="1" />
+  <rect x="$(xoff)" y="$(yoff)" width="$(width)" height="$(height)" fill="none" stroke="black" stroke-width="1" />
   
     <polyline
     points="$points"
@@ -79,5 +61,8 @@ function template(data, color="red")
 </svg> 
 """
 end
+
+
 mostrar(svg) =  display("image/svg+xml", svg)
+
 end # module Graficos

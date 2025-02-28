@@ -9,5 +9,5 @@ Graficos.template(data)
 ```
 
 ```@docs
-escalear(data)
+Graficos.escalear(data, ancho, alto)
 ```
