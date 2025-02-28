@@ -16,10 +16,6 @@ yoff = 20
 como_string(x,y) = "$x,$y"
 
 
-
-
-
-
 puntos(data) = join(map( p ->como_string(p[1]+xoff, height-p[2]+yoff), escalear(data, width, height))," ")
 
 
@@ -65,5 +61,8 @@ function template(data, color="red")
 </svg> 
 """
 end
+
+
 mostrar(svg) =  display("image/svg+xml", svg)
+
 end # module Graficos
