@@ -15,7 +15,7 @@ function escalear_a_unitario(data)
     return [((x - min_x)/x_scale, (y - min_y)/y_scale) for (x, y) in data]
   end
 
-  """
+"""
 Escala los datos de entrada para que se ajusten a un ancho y alto específicos, manteniendo la proporción de aspecto.
 
 La función `escalear` toma una lista de pares de coordenadas `(x, y)` y los escala para que se ajusten dentro de un área rectangular del `ancho` y `alto` especificados, con un margen de 10 píxeles en cada lado. El escalado se realiza encontrando los valores mínimos y máximos de las coordenadas `x` e `y`, y luego escalando los datos al 90% del ancho y alto disponibles.
