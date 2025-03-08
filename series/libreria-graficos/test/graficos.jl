@@ -50,7 +50,6 @@ end
                 @test sobre_escribir_resultados == false
             end
             @test svg == read(open(path),String)
-            # @test path == ""
         end
 
 end
