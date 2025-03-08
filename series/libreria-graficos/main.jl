@@ -12,3 +12,4 @@ Graficos.template(data) |> Graficos.mostrar
 
 d2 = escalear(data)
 
+Graficos.plot(x -> cos(x)) |> Graficos.mostrar

@@ -65,4 +65,7 @@ end
 
 mostrar(svg) =  display("image/svg+xml", svg)
 
+
+plot(f) = template(map(x->(x,f(x)), -5:0.05:5))
+
 end # module Graficos
