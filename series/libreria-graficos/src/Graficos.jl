@@ -7,11 +7,12 @@ include("escaleo.jl")
 fig_width = 420
 fig_height = 420
 
-width = fig_width - 20
-height = fig_height - 20
+xoff = 10
+yoff = 10
 
-xoff = 20
-yoff = 20
+width = fig_width - 2*xoff
+height = fig_height - 2*yoff
+
 
 como_string(x,y) = "$x,$y"
 
@@ -34,7 +35,7 @@ Returns:
 function template(data, color="red") 
    points = puntos(data)
 """
-<svg height="$height" width="$width" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 10px solid black"> 
+<svg height="$(fig_height)" width="$(fig_width)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 
   <defs>
     <!-- Dot marker definition -->
     <marker
@@ -48,7 +49,9 @@ function template(data, color="red")
     </marker>
   </defs>
 
-  <rect x="0" y="0" width="$(fig_width)" height="$(fig_height)" fill="none" stroke="blue" stroke-width="1" />
+  <rect x="0" y="0" width="$(fig_width)" height="$(fig_height)" fill="none" stroke="green" stroke-width="1" />
+  
+  <!-- Axes -->
   <rect x="$(xoff)" y="$(yoff)" width="$(width)" height="$(height)" fill="none" stroke="black" stroke-width="1" />
   
     <polyline
