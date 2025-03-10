@@ -1,36 +1,33 @@
 # llevamos todo al cuadrado unitario
-function escalear_a_unitario(data)
-    if  length(data) == 1
-      return [(1/2, 1/2)]
-    end
+
+function calcular_rangos(data)
+
+  min_x, max_x = extrema(map(x -> x[1], data))
+  min_y, max_y = extrema(map(x -> x[2], data))
   
-    min_x, max_x = extrema(map(x -> x[1], data))
-    min_y, max_y = extrema(map(x -> x[2], data))
-  
-    x_scale = (max_x - min_x)
-    x_scale = x_scale == 0 ? 1 : x_scale
-    y_scale = (max_y - min_y)
-    y_scale = y_scale == 0 ? 1 : y_scale
-  
-    return [((x - min_x)/x_scale, (y - min_y)/y_scale) for (x, y) in data]
+  x_scale = (max_x - min_x)
+  x_scale = x_scale == 0 ? 1 : x_scale
+  y_scale = (max_y - min_y)
+  y_scale = y_scale == 0 ? 1 : y_scale
+
+  (x=(min=min_x, max=max_x, scale=x_scale), y=(min=min_y, max=max_y, scale=y_scale))
+end
+
+function funciones_de_escaleo_a_unitario(data, rangos)
+
+  if  length(data) == 1
+    return (x->1/2, y->1/2)
   end
 
-"""
-Escala los datos de entrada para que se ajusten a un ancho y alto específicos, manteniendo la proporción de aspecto.
+  ((min_x, max_x, x_scale), (min_y, max_y, y_scale)) = rangos
 
-La función `escalear` toma una lista de pares de coordenadas `(x, y)` y los escala para que se ajusten dentro de un área rectangular del `ancho` y `alto` especificados,
-con un margen de 10 píxeles en cada lado. El escalado se realiza encontrando los valores mínimos y máximos de las coordenadas `x` e `y`, y luego escalando los datos 
-al 90% del ancho y alto disponibles.
+  fx(x) = (x - min_x)/x_scale
+  fy(y)= (y - min_y)/y_scale
 
-Args:
-    data (Tuple{Number, Number}[]): Una lista de pares de coordenadas `(x, y)` para ser escalados.
-    width (Number): El ancho deseado de los datos escalados.
-    height (Number): El alto deseado de los datos escalados.
+  (fx=fx, fy=fy)
+end
 
-Returns:
-    Tuple{Number, Number}[]: Los pares de coordenadas `(x, y)` escalados.
-"""
-function escalear(data, ancho, alto)  
- i = escalear_a_unitario(data)
- [(x * ancho, y * alto) for (x, y) in i]
+function escalear_a_unitario(data)
+    fx, fy = funciones_de_escaleo_a_unitario(data, calcular_rangos(data))
+    return [(fx(x), fy(y)) for (x, y) in data]
 end
