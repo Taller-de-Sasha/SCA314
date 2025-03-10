@@ -16,6 +16,12 @@ PLOT_HEIGHT = FIG_HEIGHT - 2 * PLOT_Y_OFFSET
 
 N_DIVISIONES = 5+2
 
+# Colores
+COLOR_EJES_HORIZONTALES = "yellow"
+COLOR_EJES_VERTICALES = "green"
+COLOR_ORIGEN_X = "magenta"
+COLOR_ORIGEN_Y = "cyan"
+
 como_string(x, y) = "$x,$y"
 
 numero_formateado(x) = Printf.@sprintf("%.2f", x)
@@ -62,19 +68,19 @@ function ejes_horizontales(puntos, color)
 end
 
 
-function ejes_origen(x,y, rangos, color)
+function ejes_origen(x,y, rangos, color_x, color_y)
   rx, ry = rangos
   ejes = ""
   if (rx.min < 0 && rx.max > 0) 
     ejes *= """
-    <line x1="$x" y1="$(PLOT_Y_OFFSET)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" stroke="$color" stroke-width="1" />
+    <line x1="$x" y1="$(PLOT_Y_OFFSET)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" stroke="$color_y" stroke-width="1" />
     <text x="$x" y="$(PLOT_Y_OFFSET+PLOT_HEIGHT+10)" font-size="10">0.0</text>
     """  
   end
   
   if (ry.min < 0 && ry.max > 0)
     ejes *= """
-    <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+PLOT_WIDTH)" y2="$y" stroke="$color" stroke-width="1" />
+    <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+PLOT_WIDTH)" y2="$y" stroke="$color_x" stroke-width="1" />
     <text x="$(PLOT_X_OFFSET/2)" y="$y" font-size="10">0.0</text>
     """
   end
@@ -104,9 +110,9 @@ function template(data, color="red")
 
   points = puntos(data_escalada)
 
-  ejes_v = ejes_verticales(puntos_eje(N_DIVISIONES, r.x, Fx),"green")
-  ejes_h = ejes_horizontales(puntos_eje(N_DIVISIONES, r.y, Fy), "yellow")
-  ejes_o = ejes_origen(Fx(0), Fy(0), r, "magenta")
+  ejes_v = ejes_verticales(puntos_eje(N_DIVISIONES, r.x, Fx), COLOR_EJES_HORIZONTALES)
+  ejes_h = ejes_horizontales(puntos_eje(N_DIVISIONES, r.y, Fy), COLOR_EJES_VERTICALES)
+  ejes_o = ejes_origen(Fx(0), Fy(0), r, COLOR_ORIGEN_X, COLOR_ORIGEN_Y)
 
   """
 <svg height="$(FIG_HEIGHT)" width="$(FIG_WIDTH)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 
