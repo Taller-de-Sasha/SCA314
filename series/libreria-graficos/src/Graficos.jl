@@ -38,27 +38,27 @@ function puntos(data)
 end
 
 function ejes_verticales(puntos, color)
-  function l(x)
+  function l(label, x)
   """
   <line x1="$x" y1="$(PLOT_Y_OFFSET)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" stroke="$color" stroke-width="1" />
   <line x1="$x" y1="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT-5)" stroke="black" stroke-width="1" />
-  <text x="$x" y="$(PLOT_Y_OFFSET)" font-size="10">$(numero_formateado(x))</text>
+  <text x="$x" y="$(PLOT_Y_OFFSET+PLOT_HEIGHT+10)" font-size="10">$(numero_formateado(label))</text>
 
   """
   end
-  join(map(l, puntos),"\n")
+  join(map(p->l(p[1],p[2]), puntos),"\n")
 end
 
 function ejes_horizontales(puntos, color)
-  function l(y)
+  function l(label, y)
   """
   <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+PLOT_WIDTH)" y2="$y" stroke="$color" stroke-width="1" />
   <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+5)" y2="$y" stroke="black" stroke-width="1" />
-  <text x="$(PLOT_X_OFFSET/2)" y="$(PLOT_X_OFFSET+PLOT_WIDTH-y)" font-size="10">$(numero_formateado(y))</text>
+  <text x="$(PLOT_X_OFFSET/2)" y="$(y)" font-size="10">$(numero_formateado(label))</text>
 
   """
   end
-  join(map(l, puntos),"\n")
+  join(map(p->l(p[1],p[2]), puntos),"\n")
 end
 
 
@@ -84,8 +84,8 @@ function template(data, color="red")
 
   points = puntos(data_escalada)
 
-  ejes_v = ejes_verticales(puntos_eje(N_DIVISIONES, escaleo_a_figura_x),"green")
-  ejes_h = ejes_horizontales(puntos_eje(N_DIVISIONES, escaleo_a_figura_y), "yellow")
+  ejes_v = ejes_verticales(puntos_eje(N_DIVISIONES, r.x, Fx),"green")
+  ejes_h = ejes_horizontales(puntos_eje(N_DIVISIONES, r.y, Fy), "yellow")
 
   """
 <svg height="$(FIG_HEIGHT)" width="$(FIG_WIDTH)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 

@@ -18,72 +18,72 @@
   <rect x="10" y="10" width="400" height="400" fill="none" stroke="black" stroke-width="1" />
   <line x1="10.0" y1="10" x2="10.0" y2="410" stroke="green" stroke-width="1" />
 <line x1="10.0" y1="410" x2="10.0" y2="405" stroke="black" stroke-width="1" />
-<text x="10.0" y="10" font-size="10">10.00</text>
+<text x="10.0" y="420" font-size="10">-5.00</text>
 
 
 <line x1="76.66666666666666" y1="10" x2="76.66666666666666" y2="410" stroke="green" stroke-width="1" />
 <line x1="76.66666666666666" y1="410" x2="76.66666666666666" y2="405" stroke="black" stroke-width="1" />
-<text x="76.66666666666666" y="10" font-size="10">76.67</text>
+<text x="76.66666666666666" y="420" font-size="10">-3.33</text>
 
 
 <line x1="143.33333333333331" y1="10" x2="143.33333333333331" y2="410" stroke="green" stroke-width="1" />
 <line x1="143.33333333333331" y1="410" x2="143.33333333333331" y2="405" stroke="black" stroke-width="1" />
-<text x="143.33333333333331" y="10" font-size="10">143.33</text>
+<text x="143.33333333333331" y="420" font-size="10">-1.67</text>
 
 
 <line x1="210.0" y1="10" x2="210.0" y2="410" stroke="green" stroke-width="1" />
 <line x1="210.0" y1="410" x2="210.0" y2="405" stroke="black" stroke-width="1" />
-<text x="210.0" y="10" font-size="10">210.00</text>
+<text x="210.0" y="420" font-size="10">0.00</text>
 
 
-<line x1="276.66666666666663" y1="10" x2="276.66666666666663" y2="410" stroke="green" stroke-width="1" />
-<line x1="276.66666666666663" y1="410" x2="276.66666666666663" y2="405" stroke="black" stroke-width="1" />
-<text x="276.66666666666663" y="10" font-size="10">276.67</text>
+<line x1="276.6666666666667" y1="10" x2="276.6666666666667" y2="410" stroke="green" stroke-width="1" />
+<line x1="276.6666666666667" y1="410" x2="276.6666666666667" y2="405" stroke="black" stroke-width="1" />
+<text x="276.6666666666667" y="420" font-size="10">1.67</text>
 
 
 <line x1="343.33333333333337" y1="10" x2="343.33333333333337" y2="410" stroke="green" stroke-width="1" />
 <line x1="343.33333333333337" y1="410" x2="343.33333333333337" y2="405" stroke="black" stroke-width="1" />
-<text x="343.33333333333337" y="10" font-size="10">343.33</text>
+<text x="343.33333333333337" y="420" font-size="10">3.33</text>
 
 
 <line x1="410.0" y1="10" x2="410.0" y2="410" stroke="green" stroke-width="1" />
 <line x1="410.0" y1="410" x2="410.0" y2="405" stroke="black" stroke-width="1" />
-<text x="410.0" y="10" font-size="10">410.00</text>
+<text x="410.0" y="420" font-size="10">5.00</text>
 
 
   <line x1="10" y1="410.0" x2="410" y2="410.0" stroke="yellow" stroke-width="1" />
 <line x1="10" y1="410.0" x2="15" y2="410.0" stroke="black" stroke-width="1" />
-<text x="5.0" y="0.0" font-size="10">410.00</text>
+<text x="5.0" y="410.0" font-size="10">-2.52</text>
 
 
-<line x1="10" y1="343.33333333333337" x2="410" y2="343.33333333333337" stroke="yellow" stroke-width="1" />
-<line x1="10" y1="343.33333333333337" x2="15" y2="343.33333333333337" stroke="black" stroke-width="1" />
-<text x="5.0" y="66.66666666666663" font-size="10">343.33</text>
+<line x1="10" y1="343.3333333333333" x2="410" y2="343.3333333333333" stroke="yellow" stroke-width="1" />
+<line x1="10" y1="343.3333333333333" x2="15" y2="343.3333333333333" stroke="black" stroke-width="1" />
+<text x="5.0" y="343.3333333333333" font-size="10">-1.68</text>
 
 
-<line x1="10" y1="276.6666666666667" x2="410" y2="276.6666666666667" stroke="yellow" stroke-width="1" />
-<line x1="10" y1="276.6666666666667" x2="15" y2="276.6666666666667" stroke="black" stroke-width="1" />
-<text x="5.0" y="133.33333333333331" font-size="10">276.67</text>
+<line x1="10" y1="276.66666666666663" x2="410" y2="276.66666666666663" stroke="yellow" stroke-width="1" />
+<line x1="10" y1="276.66666666666663" x2="15" y2="276.66666666666663" stroke="black" stroke-width="1" />
+<text x="5.0" y="276.66666666666663" font-size="10">-0.84</text>
 
 
 <line x1="10" y1="210.0" x2="410" y2="210.0" stroke="yellow" stroke-width="1" />
 <line x1="10" y1="210.0" x2="15" y2="210.0" stroke="black" stroke-width="1" />
-<text x="5.0" y="200.0" font-size="10">210.00</text>
+<text x="5.0" y="210.0" font-size="10">0.00</text>
 
 
 <line x1="10" y1="143.33333333333337" x2="410" y2="143.33333333333337" stroke="yellow" stroke-width="1" />
 <line x1="10" y1="143.33333333333337" x2="15" y2="143.33333333333337" stroke="black" stroke-width="1" />
-<text x="5.0" y="266.66666666666663" font-size="10">143.33</text>
+<text x="5.0" y="143.33333333333337" font-size="10">0.84</text>
 
 
-<line x1="10" y1="76.66666666666663" x2="410" y2="76.66666666666663" stroke="yellow" stroke-width="1" />
-<line x1="10" y1="76.66666666666663" x2="15" y2="76.66666666666663" stroke="black" stroke-width="1" />
-<text x="5.0" y="333.33333333333337" font-size="10">76.67</text>
+<line x1="10" y1="76.66666666666669" x2="410" y2="76.66666666666669" stroke="yellow" stroke-width="1" />
+<line x1="10" y1="76.66666666666669" x2="15" y2="76.66666666666669" stroke="black" stroke-width="1" />
+<text x="5.0" y="76.66666666666669" font-size="10">1.68</text>
 
 
 <line x1="10" y1="10.0" x2="410" y2="10.0" stroke="yellow" stroke-width="1" />
 <line x1="10" y1="10.0" x2="15" y2="10.0" stroke="black" stroke-width="1" />
-<text x="5.0" y="400.0" font-size="10">10.00</text>
+<text x="5.0" y="10.0" font-size="10">2.52</text>
 
 
 
