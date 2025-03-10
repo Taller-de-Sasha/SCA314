@@ -54,13 +54,33 @@ function ejes_horizontales(puntos, color)
   """
   <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+PLOT_WIDTH)" y2="$y" stroke="$color" stroke-width="1" />
   <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+5)" y2="$y" stroke="black" stroke-width="1" />
-  <text x="$(PLOT_X_OFFSET/2)" y="$(y)" font-size="10">$(numero_formateado(label))</text>
+  <text x="$(PLOT_X_OFFSET/2)" y="$y" font-size="10">$(numero_formateado(label))</text>
 
   """
   end
   join(map(p->l(p[1],p[2]), puntos),"\n")
 end
 
+
+function ejes_origen(x,y, rangos, color)
+  rx, ry = rangos
+  ejes = ""
+  if (rx.min < 0 && rx.max > 0) 
+    ejes *= """
+    <line x1="$x" y1="$(PLOT_Y_OFFSET)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" stroke="$color" stroke-width="1" />
+    <text x="$x" y="$(PLOT_Y_OFFSET+PLOT_HEIGHT+10)" font-size="10">0.0</text>
+    """  
+  end
+  
+  if (ry.min < 0 && ry.max > 0)
+    ejes *= """
+    <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+PLOT_WIDTH)" y2="$y" stroke="$color" stroke-width="1" />
+    <text x="$(PLOT_X_OFFSET/2)" y="$y" font-size="10">0.0</text>
+    """
+  end
+  
+  ejes
+end
 
 """
 Genera una cadena de puntos SVG a partir de los datos proporcionados.
@@ -86,6 +106,7 @@ function template(data, color="red")
 
   ejes_v = ejes_verticales(puntos_eje(N_DIVISIONES, r.x, Fx),"green")
   ejes_h = ejes_horizontales(puntos_eje(N_DIVISIONES, r.y, Fy), "yellow")
+  ejes_o = ejes_origen(Fx(0), Fy(0), r, "magenta")
 
   """
 <svg height="$(FIG_HEIGHT)" width="$(FIG_WIDTH)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 
@@ -109,6 +130,7 @@ function template(data, color="red")
   $ejes_v
   $ejes_h
 
+  $ejes_o
 
   $points
 </svg> 
