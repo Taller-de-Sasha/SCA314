@@ -9,18 +9,29 @@ FIG_HEIGHT = 420
 PLOT_X_OFFSET = 10
 PLOT_Y_OFFSET = 10
 
-PLOT_WIDTH = FIG_WIDTH - 2*PLOT_X_OFFSET
-PLOT_HEIGHT = FIG_HEIGHT - 2*PLOT_Y_OFFSET
+PLOT_WIDTH = FIG_WIDTH - 2 * PLOT_X_OFFSET
+PLOT_HEIGHT = FIG_HEIGHT - 2 * PLOT_Y_OFFSET
 
 
-como_string(x,y) = "$x,$y"
+como_string(x, y) = "$x,$y"
 
 
-escaleo_a_figura_x(x) = PLOT_WIDTH*x + PLOT_X_OFFSET
-escaleo_a_figura_y(y) = PLOT_HEIGHT - (PLOT_HEIGHT*y) + PLOT_Y_OFFSET
+escaleo_a_figura_x(x) = PLOT_WIDTH * x + PLOT_X_OFFSET
+escaleo_a_figura_y(y) = PLOT_HEIGHT - (PLOT_HEIGHT * y) + PLOT_Y_OFFSET
 
-puntos(data) = join(map( p -> como_string(p[1], p[2]), data)," ")
+function puntos(data)
+  points = join(map(p -> como_string(p[1], p[2]), data), " ")
 
+  """
+  <polyline
+  points="$points"
+  fill="none"
+  stroke="none"
+  marker-start="url(#dot)"
+  marker-mid="url(#dot)"
+  marker-end="url(#dot)" />
+  """
+end
 
 """
 Genera una cadena de puntos SVG a partir de los datos proporcionados.
@@ -34,14 +45,15 @@ Args:
 Returns:
     String: Una cadena de puntos SVG que se puede usar para dibujar una polilínea u otra forma SVG.
 """
-function template(data, color="red") 
-   r = calcular_rangos(data)
-   (fx, fy) = funciones_de_escaleo_a_unitario(data, r)
-   Fx(x) = escaleo_a_figura_x(fx(x))
-   Fy(y) = escaleo_a_figura_y(fy(y))
+function template(data, color="red")
+  r = calcular_rangos(data)
+  (fx, fy) = funciones_de_escaleo_a_unitario(data, r)
+  Fx(x) = escaleo_a_figura_x(fx(x))
+  Fy(y) = escaleo_a_figura_y(fy(y))
 
-   data_escalada =  [(Fx(x), Fy(y)) for (x, y) in data]
-   points = puntos(data_escalada)
+  data_escalada = [(Fx(x), Fy(y)) for (x, y) in data]
+
+  points = puntos(data_escalada)
 
   """
 <svg height="$(FIG_HEIGHT)" width="$(FIG_WIDTH)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 
@@ -63,21 +75,14 @@ function template(data, color="red")
   <!-- Axes -->
   <rect x="$(PLOT_X_OFFSET)" y="$(PLOT_Y_OFFSET)" width="$(PLOT_WIDTH)" height="$(PLOT_HEIGHT)" fill="none" stroke="black" stroke-width="1" />
   
-    <polyline
-    points="$points"
-    fill="none"
-    stroke="none"
-    marker-start="url(#dot)"
-    marker-mid="url(#dot)"
-    marker-end="url(#dot)" />
+  $points
 </svg> 
 """
 end
 
 
-mostrar(svg) =  display("image/svg+xml", svg)
+mostrar(svg) = display("image/svg+xml", svg)
 
-
-plot(f) = template(map(x->(x,f(x)), -5:0.05:5))
+plot(f) = template(map(x -> (x, f(x)), -5:0.05:5))
 
 end # module Graficos
