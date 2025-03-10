@@ -1,5 +1,7 @@
 module Graficos
 
+using Printf
+
 include("escaleo.jl")
 include("ejes.jl")
 
@@ -12,9 +14,11 @@ PLOT_Y_OFFSET = 10
 PLOT_WIDTH = FIG_WIDTH - 2 * PLOT_X_OFFSET
 PLOT_HEIGHT = FIG_HEIGHT - 2 * PLOT_Y_OFFSET
 
+N_DIVISIONES = 5+2
 
 como_string(x, y) = "$x,$y"
 
+numero_formateado(x) = Printf.@sprintf("%.2f", x)
 
 escaleo_a_figura_x(x) = PLOT_WIDTH * x + PLOT_X_OFFSET
 escaleo_a_figura_y(y) = PLOT_HEIGHT - (PLOT_HEIGHT * y) + PLOT_Y_OFFSET
@@ -32,6 +36,31 @@ function puntos(data)
   marker-end="url(#dot)" />
   """
 end
+
+function ejes_verticales(puntos, color)
+  function l(x)
+  """
+  <line x1="$x" y1="$(PLOT_Y_OFFSET)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" stroke="$color" stroke-width="1" />
+  <line x1="$x" y1="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT-5)" stroke="black" stroke-width="1" />
+  <text x="$x" y="$(PLOT_Y_OFFSET)" font-size="10">$(numero_formateado(x))</text>
+
+  """
+  end
+  join(map(l, puntos),"\n")
+end
+
+function ejes_horizontales(puntos, color)
+  function l(y)
+  """
+  <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+PLOT_WIDTH)" y2="$y" stroke="$color" stroke-width="1" />
+  <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+5)" y2="$y" stroke="black" stroke-width="1" />
+  <text x="$(PLOT_X_OFFSET/2)" y="$(PLOT_X_OFFSET+PLOT_WIDTH-y)" font-size="10">$(numero_formateado(y))</text>
+
+  """
+  end
+  join(map(l, puntos),"\n")
+end
+
 
 """
 Genera una cadena de puntos SVG a partir de los datos proporcionados.
@@ -55,6 +84,9 @@ function template(data, color="red")
 
   points = puntos(data_escalada)
 
+  ejes_v = ejes_verticales(puntos_eje(N_DIVISIONES, escaleo_a_figura_x),"green")
+  ejes_h = ejes_horizontales(puntos_eje(N_DIVISIONES, escaleo_a_figura_y), "yellow")
+
   """
 <svg height="$(FIG_HEIGHT)" width="$(FIG_WIDTH)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 
   <defs>
@@ -74,7 +106,10 @@ function template(data, color="red")
   
   <!-- Axes -->
   <rect x="$(PLOT_X_OFFSET)" y="$(PLOT_Y_OFFSET)" width="$(PLOT_WIDTH)" height="$(PLOT_HEIGHT)" fill="none" stroke="black" stroke-width="1" />
-  
+  $ejes_v
+  $ejes_h
+
+
   $points
 </svg> 
 """
