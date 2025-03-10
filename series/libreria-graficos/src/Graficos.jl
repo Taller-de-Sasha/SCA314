@@ -1,24 +1,21 @@
 module Graficos
 
-export escalear
-
 include("escaleo.jl")
+include("ejes.jl")
 
-fig_width = 420
-fig_height = 420
+FIG_WIDTH = 420
+FIG_HEIGHT = 420
 
-xoff = 10
-yoff = 10
+PLOT_X_OFFSET = 10
+PLOT_Y_OFFSET = 10
 
-width = fig_width - 2*xoff
-height = fig_height - 2*yoff
+PLOT_WIDTH = FIG_WIDTH - 2*PLOT_X_OFFSET
+PLOT_HEIGHT = FIG_HEIGHT - 2*PLOT_Y_OFFSET
 
 
 como_string(x,y) = "$x,$y"
 
-
-puntos(data) = join(map( p ->como_string(p[1]+xoff, height-p[2]+yoff), escalear(data, width, height))," ")
-
+puntos(data) = join(map( p ->como_string(p[1]+PLOT_X_OFFSET, PLOT_HEIGHT-p[2]+PLOT_Y_OFFSET), data)," ")
 
 """
 Genera una cadena de puntos SVG a partir de los datos proporcionados.
@@ -33,9 +30,13 @@ Returns:
     String: Una cadena de puntos SVG que se puede usar para dibujar una polilínea u otra forma SVG.
 """
 function template(data, color="red") 
-   points = puntos(data)
-"""
-<svg height="$(fig_height)" width="$(fig_width)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 
+   r = calcular_rangos(data)
+   (fx, fy) = funciones_de_escaleo_a_unitario(data, r)
+   data_escalada =  [(fx(x) * PLOT_WIDTH, fy(y) * PLOT_HEIGHT) for (x, y) in data]
+   points = puntos(data_escalada)
+
+  """
+<svg height="$(FIG_HEIGHT)" width="$(FIG_WIDTH)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 
   <defs>
     <!-- Dot marker definition -->
     <marker
@@ -49,10 +50,10 @@ function template(data, color="red")
     </marker>
   </defs>
 
-  <rect x="0" y="0" width="$(fig_width)" height="$(fig_height)" fill="none" stroke="green" stroke-width="1" />
+  <!-- <rect x="0" y="0" width="$(FIG_WIDTH)" height="$(FIG_HEIGHT)" fill="none" stroke="green" stroke-width="5" /> -->
   
   <!-- Axes -->
-  <rect x="$(xoff)" y="$(yoff)" width="$(width)" height="$(height)" fill="none" stroke="black" stroke-width="1" />
+  <rect x="$(PLOT_X_OFFSET)" y="$(PLOT_Y_OFFSET)" width="$(PLOT_WIDTH)" height="$(PLOT_HEIGHT)" fill="none" stroke="black" stroke-width="1" />
   
     <polyline
     points="$points"

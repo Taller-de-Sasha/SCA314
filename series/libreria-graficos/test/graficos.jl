@@ -31,7 +31,7 @@ end
 end
 
 @testitem "Test ejemplos funciones" setup=[Setups] begin
-    const sobre_escribir_resultados = false
+    const sobre_escribir_resultados = true
 
     funciones = [
         ( x-> -x+1, "lineal" ),
@@ -51,7 +51,7 @@ end
             end
             @test svg == read(open(path),String)
         end
-
 end
+
 
 
