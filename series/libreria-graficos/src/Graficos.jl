@@ -15,7 +15,12 @@ PLOT_HEIGHT = FIG_HEIGHT - 2*PLOT_Y_OFFSET
 
 como_string(x,y) = "$x,$y"
 
-puntos(data) = join(map( p ->como_string(p[1]+PLOT_X_OFFSET, PLOT_HEIGHT-p[2]+PLOT_Y_OFFSET), data)," ")
+
+escaleo_a_figura_x(x) = PLOT_WIDTH*x + PLOT_X_OFFSET
+escaleo_a_figura_y(y) = PLOT_HEIGHT - (PLOT_HEIGHT*y) + PLOT_Y_OFFSET
+
+puntos(data) = join(map( p -> como_string(p[1], p[2]), data)," ")
+
 
 """
 Genera una cadena de puntos SVG a partir de los datos proporcionados.
@@ -32,7 +37,10 @@ Returns:
 function template(data, color="red") 
    r = calcular_rangos(data)
    (fx, fy) = funciones_de_escaleo_a_unitario(data, r)
-   data_escalada =  [(fx(x) * PLOT_WIDTH, fy(y) * PLOT_HEIGHT) for (x, y) in data]
+   Fx(x) = escaleo_a_figura_x(fx(x))
+   Fy(y) = escaleo_a_figura_y(fy(y))
+
+   data_escalada =  [(Fx(x), Fy(y)) for (x, y) in data]
    points = puntos(data_escalada)
 
   """

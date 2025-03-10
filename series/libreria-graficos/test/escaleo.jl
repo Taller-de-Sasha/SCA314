@@ -48,7 +48,6 @@ end
         ancho, alto = 400, 600
         data = [(0,0), (10, 20), (50,10)] 
         fx, fy = Graficos.funciones_de_escaleo_a_unitario(data, Graficos.calcular_rangos(data))
-
         escaleada = [(fx(x)*ancho, alto*fy(y)) for (x, y) in data]
         @test escaleada == [(0.0,0.0), (80.0, 600.0), (400.0, 300.0)]
     end
