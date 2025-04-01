@@ -15,10 +15,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+from pprint import pprint
 from numpy import array, ones, random, zeros, diag, zeros_like, ones_like, shape, squeeze, size, sum, min, max, quantile
-from scipy.linalg import solve
+# from scipy.linalg import solve
 
-# from interop import solve_julia as solve
+from interop import solve_julia as solve
 import matplotlib.pyplot as plt
 end = None # para usar en los slice
 
@@ -228,14 +229,15 @@ if __name__ == "__main__":
     psi = ones(grilla)
 
 
-    pasos = 10
+    pasos = 100
     for t in range(pasos):
+        # print(f"paso: {t}")
         concentracion, psi = avanzar(concentracion, psi, delta, R, coef_difusion, k_cinetico)
-    
+        # pprint(concentracion)
 
-    # fig, ax = plt.subplots()
-    # plot_densidad(ax, concentracion, R)    
+    fig, ax = plt.subplots()
+    plot_densidad(ax, concentracion, R)    
 
-    # plt.show()
-    # plt.savefig("densidad.png")
+    plt.show()
+    plt.savefig("densidad_julia.png")
     # 10
