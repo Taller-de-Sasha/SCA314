@@ -19,6 +19,16 @@ format:
 {{< fa brands github >}} [Taller-De-Sasha/SCA314](https://www.github.com/Taller-de-Sasha/SCA314)
 :::: 
 
+# Parte 1: Introducción al problema y armado del proyecto
+
+---
+
+[https://saxa.xyz/charla-cata](https://saxa.xyz/charla-cata)
+
+--- 
+
+[]()
+
 # Introducción y objetivos
 
 ---
@@ -34,6 +44,3 @@ format:
 :::
 
 
----
-
-[https://saxa.xyz/charla-cata](https://saxa.xyz/charla-cata)
