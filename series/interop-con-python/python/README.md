@@ -7,7 +7,7 @@ ipython
 ```
 
 ```python
-%load experimento.py
+%run experimento.py
 ```
 
 ```python
