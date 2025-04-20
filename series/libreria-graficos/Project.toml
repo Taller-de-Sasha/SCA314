@@ -3,5 +3,8 @@ uuid = "908a5197-780b-4ffb-a736-f299f747b567"
 authors = ["augusto kielbowicz"]
 version = "0.1.0"
 
+[deps]
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+
 [compat]
 julia = "1.6"

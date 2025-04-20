@@ -1,23 +1,92 @@
 module Graficos
 
-export escalear
+using Printf
 
 include("escaleo.jl")
+include("ejes.jl")
 
-fig_width = 420
-fig_height = 420
+FIG_WIDTH = 420
+FIG_HEIGHT = 420
 
-width = fig_width - 20
-height = fig_height - 20
+PLOT_X_OFFSET = 10
+PLOT_Y_OFFSET = 10
 
-xoff = 20
-yoff = 20
+PLOT_WIDTH = FIG_WIDTH - 2 * PLOT_X_OFFSET
+PLOT_HEIGHT = FIG_HEIGHT - 2 * PLOT_Y_OFFSET
 
-como_string(x,y) = "$x,$y"
+N_DIVISIONES = 5+2
+
+# Colores
+COLOR_EJES_HORIZONTALES = "yellow"
+COLOR_EJES_VERTICALES = "green"
+COLOR_ORIGEN_X = "magenta"
+COLOR_ORIGEN_Y = "cyan"
+
+como_string(x, y) = "$x,$y"
+
+numero_formateado(x) = Printf.@sprintf("%.2f", x)
+
+escaleo_a_figura_x(x) = PLOT_WIDTH * x + PLOT_X_OFFSET
+escaleo_a_figura_y(y) = PLOT_HEIGHT - (PLOT_HEIGHT * y) + PLOT_Y_OFFSET
+
+function puntos(data)
+  points = join(map(p -> como_string(p[1], p[2]), data), " ")
+
+  """
+  <polyline
+  points="$points"
+  fill="none"
+  stroke="none"
+  marker-start="url(#dot)"
+  marker-mid="url(#dot)"
+  marker-end="url(#dot)" />
+  """
+end
+
+function ejes_verticales(puntos, color)
+  function l(label, x)
+  """
+  <line x1="$x" y1="$(PLOT_Y_OFFSET)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" stroke="$color" stroke-width="1" />
+  <line x1="$x" y1="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT-5)" stroke="black" stroke-width="1" />
+  <text x="$x" y="$(PLOT_Y_OFFSET+PLOT_HEIGHT+10)" font-size="10">$(numero_formateado(label))</text>
+
+  """
+  end
+  join(map(p->l(p[1],p[2]), puntos),"\n")
+end
+
+function ejes_horizontales(puntos, color)
+  function l(label, y)
+  """
+  <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+PLOT_WIDTH)" y2="$y" stroke="$color" stroke-width="1" />
+  <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+5)" y2="$y" stroke="black" stroke-width="1" />
+  <text x="$(PLOT_X_OFFSET/2)" y="$y" font-size="10">$(numero_formateado(label))</text>
+
+  """
+  end
+  join(map(p->l(p[1],p[2]), puntos),"\n")
+end
 
 
-puntos(data) = join(map( p ->como_string(p[1]+xoff, height-p[2]+yoff), escalear(data, width, height))," ")
-
+function ejes_origen(x,y, rangos, color_x, color_y)
+  rx, ry = rangos
+  ejes = ""
+  if (rx.min < 0 && rx.max > 0) 
+    ejes *= """
+    <line x1="$x" y1="$(PLOT_Y_OFFSET)" x2="$x" y2="$(PLOT_Y_OFFSET+PLOT_HEIGHT)" stroke="$color_y" stroke-width="1" />
+    <text x="$x" y="$(PLOT_Y_OFFSET+PLOT_HEIGHT+10)" font-size="10">0.0</text>
+    """  
+  end
+  
+  if (ry.min < 0 && ry.max > 0)
+    ejes *= """
+    <line x1="$(PLOT_X_OFFSET)" y1="$y" x2="$(PLOT_X_OFFSET+PLOT_WIDTH)" y2="$y" stroke="$color_x" stroke-width="1" />
+    <text x="$(PLOT_X_OFFSET/2)" y="$y" font-size="10">0.0</text>
+    """
+  end
+  
+  ejes
+end
 
 """
 Genera una cadena de puntos SVG a partir de los datos proporcionados.
@@ -31,10 +100,22 @@ Args:
 Returns:
     String: Una cadena de puntos SVG que se puede usar para dibujar una polilínea u otra forma SVG.
 """
-function template(data, color="red") 
-   points = puntos(data)
-"""
-<svg height="$height" width="$width" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 10px solid black"> 
+function template(data, color="red")
+  r = calcular_rangos(data)
+  (fx, fy) = funciones_de_escaleo_a_unitario(data, r)
+  Fx(x) = escaleo_a_figura_x(fx(x))
+  Fy(y) = escaleo_a_figura_y(fy(y))
+
+  data_escalada = [(Fx(x), Fy(y)) for (x, y) in data]
+
+  points = puntos(data_escalada)
+
+  ejes_v = ejes_verticales(puntos_eje(N_DIVISIONES, r.x, Fx), COLOR_EJES_HORIZONTALES)
+  ejes_h = ejes_horizontales(puntos_eje(N_DIVISIONES, r.y, Fy), COLOR_EJES_VERTICALES)
+  ejes_o = ejes_origen(Fx(0), Fy(0), r, COLOR_ORIGEN_X, COLOR_ORIGEN_Y)
+
+  """
+<svg height="$(FIG_HEIGHT)" width="$(FIG_WIDTH)" xmlns="http://www.w3.org/2000/svg" style="background-color: white; border: 2px solid blue"> 
   <defs>
     <!-- Dot marker definition -->
     <marker
@@ -48,21 +129,23 @@ function template(data, color="red")
     </marker>
   </defs>
 
-  <rect x="0" y="0" width="$(fig_width)" height="$(fig_height)" fill="none" stroke="blue" stroke-width="1" />
-  <rect x="$(xoff)" y="$(yoff)" width="$(width)" height="$(height)" fill="none" stroke="black" stroke-width="1" />
+  <!-- <rect x="0" y="0" width="$(FIG_WIDTH)" height="$(FIG_HEIGHT)" fill="none" stroke="green" stroke-width="5" /> -->
   
-    <polyline
-    points="$points"
-    fill="none"
-    stroke="none"
-    marker-start="url(#dot)"
-    marker-mid="url(#dot)"
-    marker-end="url(#dot)" />
+  <!-- Axes -->
+  <rect x="$(PLOT_X_OFFSET)" y="$(PLOT_Y_OFFSET)" width="$(PLOT_WIDTH)" height="$(PLOT_HEIGHT)" fill="none" stroke="black" stroke-width="1" />
+  $ejes_v
+  $ejes_h
+
+  $ejes_o
+
+  $points
 </svg> 
 """
 end
 
 
-mostrar(svg) =  display("image/svg+xml", svg)
+mostrar(svg) = display("image/svg+xml", svg)
+
+plot(f) = template(map(x -> (x, f(x)), -5:0.05:5))
 
 end # module Graficos
