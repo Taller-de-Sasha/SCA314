@@ -31,7 +31,7 @@ end
 end
 
 @testitem "Test ejemplos funciones" setup=[Setups] begin
-    const sobre_escribir_resultados = true
+    const sobre_escribir_resultados = false
 
     funciones = [
         ( x-> -x+1, "lineal" ),
