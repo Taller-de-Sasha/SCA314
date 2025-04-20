@@ -8,6 +8,3 @@ Gráficos del Tercer Mundo! Buenos, bonitos y baratos.
 Graficos.template(data)
 ```
 
-```@docs
-Graficos.escalear(data, ancho, alto)
-```
