@@ -1,0 +1,11 @@
+JULIA_VERSION := "lts"
+
+install-docs-deps:
+    julia +{{JULIA_VERSION}} --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+
+build-docs:
+    julia +{{JULIA_VERSION}} --project=docs/ docs/make.jl
+
+test:
+    # matching default config of julia-runtest https://github.com/julia-actions/julia-runtest/blob/991e65d3c2105b2be5e7d6110ce8df085a024705/test_harness.jl#L3
+    julia +{{JULIA_VERSION}} --project=@. -e 'import Pkg; Pkg.test(;coverage=true, julia_args=["--check-bounds=yes", "--compiled-modules=yes", "--depwarn=yes"], force_latest_compatible_version=false, allow_reresolve=true)'
