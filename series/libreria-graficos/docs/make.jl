@@ -6,6 +6,6 @@ makedocs(;sitename="Graficos",repo)
 
 deploydocs(;
     repo,
-    # devbranch="serie/l-g-p3",
+    devbranch="s/lg-just",
     dirname="documenter",
 )
