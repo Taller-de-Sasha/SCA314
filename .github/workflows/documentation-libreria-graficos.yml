@@ -21,21 +21,18 @@ jobs:
       contents: write
       pull-requests: read
       statuses: write
-    env:
-      JULIA_VERSION: lts
     runs-on: ubuntu-latest
     steps:
-      - uses: extractions/setup-just@v3
       - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v2
         with:
-          version: ${{ env.JULIA_VERSION }}
+          version: '1'
       - uses: julia-actions/cache@v2
       - name: Install dependencies
-        run: just install-docs-deps
+        run: julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
         working-directory: series/libreria-graficos
       - name: Build and deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # If authenticating with GitHub Actions token
-        run: just build-docs
+        run: julia --project=docs/ docs/make.jl
         working-directory: series/libreria-graficos
