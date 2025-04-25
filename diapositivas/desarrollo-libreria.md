@@ -7,6 +7,8 @@ enableMenu: false
 
 --
 
+![logo](https://raw.githubusercontent.com/Taller-de-Sasha/SCA314/refs/heads/main/logo/logo_sca.svg)
+
 <a class="fragment" href="https://www.youtube.com/@SCA314"><i class="fa fa-youtube-play"></i>  @SCA314 </a>
 
 <a class="fragment" href="https://www.github.com/Taller-de-Sasha/SCA314"><i class="fa fa-github"></i>  Taller-De-Sasha/SCA314 </a>
@@ -17,6 +19,7 @@ enableMenu: false
 
 ---
 
+<<<<<<< HEAD
 ## Parte 3
 
 Registrar el paquete {class="fragment"}
@@ -28,6 +31,15 @@ Registrar el paquete {class="fragment"}
 ```julia-repl
 pkg> add Graficos
 ```
+||||||| parent of 176e95e ([serie/l-g] p2: Configurar tests locales y en CI/CD)
+=======
+## Parte 2
+
+Configuración de CI/CD {class="fragment"}
+
+- Vamos a configurar los tests para correrlos en VSCode con [TestItemRunner](https://github.com/julia-vscode/TestItemRunner.jl)
+- Vamos a configurar el CI/CD para que se corren los tests en GitHub Actions en cada Pull Request
+>>>>>>> 176e95e ([serie/l-g] p2: Configurar tests locales y en CI/CD)
 
 ---
 
