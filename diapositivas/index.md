@@ -10,4 +10,4 @@
 
 [Desarrollo de una Librería](./desarrollo-libreria/index.html)
 
-[Interoperabilidad con Python](./interop/index.html)
+[Interoperabilidad con Python](./interop-con-python/index.html)
