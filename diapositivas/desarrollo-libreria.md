@@ -19,6 +19,19 @@ enableMenu: false
 
 ---
 
+## Parte 4
+
+Más configuraciones para el desarrollo {class="fragment"}
+
+y agregamos más funcionalidades {class="fragment"}
+
+--
+
+- Vamos a agregar la configuración de un [devcontainer](https://container.dev/) 
+- Vamos a avanzar en la implementación para graficar una función
+
+---
+
 ## Parte 3
 
 Registrar el paquete {class="fragment"}
