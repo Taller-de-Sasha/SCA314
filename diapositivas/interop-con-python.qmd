@@ -1,0 +1,39 @@
+---
+title: "Interoperabilidad con Python"
+# subtitle: "[](https://saxa.xyz/charla-cata)"
+author: "@SCA314"
+format: 
+    revealjs:
+        footer: "SCA314"
+        theme: solarized
+        output-file: interop-con-python.html
+---
+
+![](https://raw.githubusercontent.com/Taller-de-Sasha/SCA314/refs/heads/main/logo/logo_sca.svg)
+
+:::: fragment
+{{< fa brands youtube >}} [@SCA314](https://www.youtube.com/@SCA314)
+:::: 
+
+:::: fragment
+{{< fa brands github >}} [Taller-De-Sasha/SCA314](https://www.github.com/Taller-de-Sasha/SCA314)
+:::: 
+
+# Introducción y objetivos
+
+---
+
+## Cosas que voy a tratar de hacer
+
+::: incremental
+- Utilizar código de Julia en Python
+- Crear un paquete de Python que utilice código de Julia
+    - Probar distintas formas de crear el paquete y manejo de ambientes virtuales (pip+venv, poetry, conda, uv ...)
+- Utilizar código de Python en Julia
+- Crear un paquete de Julia que utilice código de Python
+:::
+
+
+---
+
+[https://saxa.xyz/charla-cata](https://saxa.xyz/charla-cata)
