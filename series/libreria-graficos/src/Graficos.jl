@@ -4,6 +4,8 @@ using Printf
 
 include("escaleo.jl")
 include("ejes.jl")
+include("graficar.jl")
+include("grafico.jl")
 
 FIG_WIDTH = 420
 FIG_HEIGHT = 420
@@ -145,7 +147,5 @@ end
 
 
 mostrar(svg) = display("image/svg+xml", svg)
-
-plot(f) = template(map(x -> (x, f(x)), -5:0.05:5))
 
 end # module Graficos
