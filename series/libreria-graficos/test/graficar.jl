@@ -33,3 +33,12 @@ end
     end
 end
 
+@testitem "Test metodos de multiples series" begin
+    using Graficos:plot, Grafico
+    @testset for f in 1:10
+        n_cols = rand(1:100)
+        m = rand(10, n_cols)
+        grafico = plot(m)
+        @test length(grafico.series) == n_cols
+    end
+end

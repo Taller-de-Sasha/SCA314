@@ -12,4 +12,4 @@ Graficos.template(data) |> Graficos.mostrar
 
 d2 = escalear(data)
 
-Graficos.plot(x -> cos(x)) |> Graficos.mostrar
+g=Graficos.plot(rand(10,3))
